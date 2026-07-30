@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>菊池孝之 - 自己紹介</title>
+<style>
+  :root {
+    --cyan: #48d5ff;
+    --pink: #ff2e9a;
+    --bg-dark: #05060d;
+    --panel: rgba(16, 20, 36, 0.72);
+    --text-main: #eaf6ff;
+    --text-sub: #93a8c9;
+    --border-glow: rgba(72, 213, 255, 0.45);
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 18px rgba(72,213,255,0.55), 0 0 40px rgba(255,46,154,0.25); }
+    50% { box-shadow: 0 0 28px rgba(72,213,255,0.85), 0 0 60px rgba(255,46,154,0.4); }
+  }
+
+  body {
+    margin: 0;
+    background:
+      radial-gradient(circle at 15% 0%, rgba(72,213,255,0.16), transparent 45%),
+      radial-gradient(circle at 90% 20%, rgba(255,46,154,0.14), transparent 40%),
+      radial-gradient(circle at 50% 90%, rgba(72,213,255,0.10), transparent 45%),
+      var(--bg-dark);
+    background-attachment: fixed;
+    color: var(--text-main);
+    font-family: "Yu Gothic", "Hiragino Sans", "Meiryo", sans-serif;
+    line-height: 1.8;
+  }
+
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  header.hero {
+    text-align: center;
+    padding: 56px 24px 40px;
+    background: transparent;
+    border-bottom: 1px solid var(--border-glow);
+  }
+
+  .avatar {
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--cyan), var(--pink));
+    padding: 4px;
+    margin: 0 auto 24px;
+    animation: pulse-glow 2.4s ease-in-out infinite;
+  }
+
+  .avatar .photo {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 3px solid #0a0e1a;
+    background-image: url('IMG_9908.JPG');
+    background-repeat: no-repeat;
+    background-size: 320% auto;
+    background-position: 50% 16%;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+    margin: 0 0 8px;
+    letter-spacing: 4px;
+    color: #ffffff;
+    text-shadow: 0 0 12px rgba(72,213,255,0.8), 0 0 30px rgba(72,213,255,0.4);
+  }
+
+  .hero p.title {
+    font-size: 15px;
+    color: var(--cyan);
+    margin: 0;
+    letter-spacing: 2px;
+    text-shadow: 0 0 8px rgba(72,213,255,0.6);
+  }
+
+  .hero p.birth {
+    font-size: 13px;
+    color: var(--text-sub);
+    margin: 8px 0 0;
+    letter-spacing: 1px;
+  }
+
+  section {
+    background: var(--panel);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-glow);
+    border-radius: 12px;
+    padding: 32px;
+    margin-top: 24px;
+    box-shadow: 0 0 24px rgba(72, 213, 255, 0.12), inset 0 0 30px rgba(72,213,255,0.04);
+  }
+
+  section h2 {
+    font-size: 16px;
+    color: var(--cyan);
+    margin: 0 0 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--pink);
+    display: inline-block;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px rgba(72,213,255,0.7);
+  }
+
+  .timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .timeline li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 20px;
+  }
+
+  .timeline li:last-child {
+    margin-bottom: 0;
+  }
+
+  .timeline li::before {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 6px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--cyan);
+    box-shadow: 0 0 10px 2px rgba(72,213,255,0.9);
+  }
+
+  .timeline li::after {
+    content: "";
+    position: absolute;
+    left: 7px;
+    top: 16px;
+    width: 2px;
+    height: calc(100% + 4px);
+    background: linear-gradient(var(--cyan), transparent);
+    opacity: 0.5;
+  }
+
+  .timeline li:last-child::after {
+    display: none;
+  }
+
+  .timeline .label {
+    font-weight: bold;
+    color: var(--text-main);
+  }
+
+  .timeline .desc {
+    color: var(--text-sub);
+    font-size: 14px;
+  }
+
+  .hobbies {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .hobby-card {
+    flex: 1 1 140px;
+    background: rgba(72, 213, 255, 0.06);
+    border: 1px solid var(--cyan);
+    box-shadow: 0 0 16px rgba(72,213,255,0.25);
+    border-radius: 12px;
+    padding: 24px 16px;
+    text-align: center;
+  }
+
+  .hobby-card:nth-child(2) {
+    background: rgba(255, 46, 154, 0.06);
+    border: 1px solid var(--pink);
+    box-shadow: 0 0 16px rgba(255,46,154,0.25);
+  }
+
+  .hobby-card .icon {
+    font-size: 32px;
+    margin-bottom: 8px;
+    filter: drop-shadow(0 0 6px rgba(255,255,255,0.5));
+  }
+
+  .hobby-card .name {
+    font-size: 14px;
+    color: var(--text-main);
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+
+  blockquote.pr {
+    margin: 0;
+    padding: 16px 20px;
+    background: linear-gradient(120deg, rgba(72,213,255,0.08), rgba(255,46,154,0.08));
+    border-left: 4px solid var(--pink);
+    border-radius: 8px;
+    font-size: 17px;
+    color: #ffffff;
+    font-weight: bold;
+    text-shadow: 0 0 8px rgba(72,213,255,0.4);
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 40px;
+    color: var(--text-sub);
+    font-size: 13px;
+    letter-spacing: 1px;
+  }
+
+  footer .logo {
+    height: 28px;
+    margin-bottom: 12px;
+    filter: drop-shadow(0 0 8px rgba(72,213,255,0.7));
+  }
+
+  @media (max-width: 480px) {
+    .container {
+      padding: 32px 16px 60px;
+    }
+    section {
+      padding: 24px 20px;
+    }
+    .hero h1 {
+      font-size: 24px;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="avatar"><div class="photo" role="img" aria-label="菊池孝之"></div></div>
+    <h1>菊池 孝之</h1>
+    <p class="title">建設業（管工事業）代表取締役社長</p>
+    <p class="birth">1973年2月10日生まれ（53歳）</p>
+  </header>
+
+  <div class="container">
+
+    <section>
+      <h2>経歴</h2>
+      <ul class="timeline">
+        <li>
+          <div class="label">専門学校 卒業</div>
+        </li>
+        <li>
+          <div class="label">株式会社ニトックス 入社</div>
+          <div class="desc">4年間勤務</div>
+        </li>
+        <li>
+          <div class="label">代表取締役社長 就任</div>
+          <div class="desc">建設業（管工事業）にて現在に至る</div>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>趣味</h2>
+      <div class="hobbies">
+        <div class="hobby-card">
+          <div class="icon">⛳</div>
+          <div class="name">ゴルフ</div>
+        </div>
+        <div class="hobby-card">
+          <div class="icon">🏍️</div>
+          <div class="name">モトクロス</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>PR</h2>
+      <blockquote class="pr">
+        何事にも根気強く取り組めます。<br>
+        趣味のゴルフやモトクロスで培った集中力と粘り強さを、仕事にも活かしています。<br>
+        2年前に事業承継で代表取締役社長に就任し、現在も経営を勉強中です。
+      </blockquote>
+    </section>
+
+    <footer>
+      <img class="logo" src="logo_w.png" alt="株式会社 八設">
+      <div>菊池 孝之</div>
+    </footer>
+
+  </div>
+
+</body>
+</html>
